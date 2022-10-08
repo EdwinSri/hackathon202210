@@ -50,6 +50,14 @@ echo '{"data-root": "/data/docker"}' | sudo tee --append /etc/docker/daemon.json
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 
+# Pre-load images
+docker pull postgres:14.1-alpine
+docker pull adminer
+docker pull mongo:6.0.2
+docker pull mongo-express:0.54
+
+# Run containers
+sudo docker compose up -d
 
 # Install tools
 sudo apt-get install unzip -y
@@ -146,12 +154,3 @@ sudo apt install powertop -y
 
 # Install ifstat (must be installed on all VMs!)
 sudo apt install ifstat -y 
-
-# Pre-load images
-docker pull postgres:14.1-alpine
-docker pull adminer
-docker pull mongo:6.0.2
-docker pull mongo-express:0.54
-
-# Run containers
-sudo docker compose up -d
