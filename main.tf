@@ -216,7 +216,7 @@ resource "outscale_vm" "hackathon_db1" {
 
 resource "outscale_vm" "hackathon_ms1" {
   image_id      = "ami-bb490c7e"
-  vm_type       = "tinav5.c4r8p1"
+  vm_type       = "tinav5.c2r4p2"
   keypair_name  = "${outscale_keypair.keypair01.keypair_name}"
   security_group_ids = [outscale_security_group.hackathon_common.security_group_id,outscale_security_group.hackathon_web.security_group_id]
   tags {
@@ -505,7 +505,7 @@ EOT
   # Run init script in VM
   provisioner "remote-exec" {  
     inline = [
-      "chmod +x /home/outscale/init.sh",
+      "chmod +x /home/outscale/db_init.sh",
       "/home/outscale/db_init.sh",
     ]
     connection {
