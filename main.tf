@@ -252,12 +252,7 @@ EOT
       host = self.public_ip
     }
   }
-
-  # Save IP to local script file 
-  provisioner "local-exec" {
-    command = "echo '${outscale_vm.hackathon_db1.public_ip} db1' >> hosts"
-  }
-
+  
   # Change script attributes 
   provisioner "local-exec" {
     command = "chmod +x db1_connect.sh"
