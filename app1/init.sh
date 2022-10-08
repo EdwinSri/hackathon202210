@@ -57,6 +57,7 @@ sudo apt-get install unzip -y
 sudo apt-get -y install python3
 sudo apt-get -y install python3-pip
 sudo apt-get -y install python3-pymongo
+pip install numpy
 
 # Install application
 mkdir /data/code
@@ -78,6 +79,7 @@ After=multi-user.target
 Type=simple
 Restart=always
 ExecStart=/usr/bin/python3 /data/code/app1.py
+Environment="PYTHONPATH=$PYTHONPATH:/home/outscale/.local/lib/python3.8/site-packages"
 
 [Install]
 WantedBy=multi-user.target
