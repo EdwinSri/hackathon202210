@@ -11,7 +11,7 @@ from flask import Flask, jsonify, request
 #   ./ms1_connect.sh
 #   journalctl -u ms1.service
 
-HOST = "db1"
+HOST = "app1"
 DATABASE = "postgres"
 USERNAME = "postgres"
 PASSWORD = "postgres"
