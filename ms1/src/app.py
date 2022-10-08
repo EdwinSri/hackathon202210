@@ -11,10 +11,11 @@ from flask import Flask, jsonify, request
 #   ./ms1_connect.sh
 #   journalctl -u ms1.service
 
-HOST = "app1"
+HOST = "localhost"
 DATABASE = "postgres"
 USERNAME = "postgres"
 PASSWORD = "postgres"
+PORT = "5432"
 
 app = Flask(__name__)
 
@@ -46,7 +47,8 @@ def product_items(product_id):
             host=HOST,
             database=DATABASE,
             user=USERNAME,
-            password=PASSWORD)
+            password=PASSWORD,
+            port=PORT)
 
         cur = conn.cursor()
 
@@ -89,7 +91,8 @@ def add_product_item():
             host=HOST,
             database=DATABASE,
             user=USERNAME,
-            password=PASSWORD)
+            password=PASSWORD,
+            port=PORT)
 
         cur = conn.cursor()
 
@@ -126,7 +129,8 @@ def delete_product(product_id):
             host=HOST,
             database=DATABASE,
             user=USERNAME,
-            password=PASSWORD)
+            password=PASSWORD,
+            port=PORT)
 
         cur = conn.cursor()
 

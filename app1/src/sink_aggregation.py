@@ -35,7 +35,7 @@ from pymongo.mongo_client import MongoClient
 RSSITHRESHOLD = -70
 
 #MongoDB ENV
-MONGO_DB_HOST= "app1"
+MONGO_DB_HOST= "localhost"
 MONGO_DB_PORT = 27017
 MONGO_DB_USERNAME = "mongodb"
 MONGO_DB_PASSWORD = "mongodb"
