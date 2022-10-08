@@ -19,7 +19,7 @@ is basic, here some elements:
 
 """
 
-import sys
+
 import struct
 import logging 
 from optparse import OptionParser
@@ -189,8 +189,8 @@ def parsePATSection(fileHandle, k):
     local = readFile(fileHandle, k+4, 4)
     transport_stream_id += (local>>24)&0xFF
     transport_stream_id = (local >> 16)
-    version_number = (local>>17)&0x1F
-    current_next_indicator = (local>>16)&0x1
+    #version_number = (local>>17)&0x1F
+    #current_next_indicator = (local>>16)&0x1
     section_number = (local>>8)&0xFF
     last_section_number = local&0xFF;
     logging.debug ('section_number = %d, last_section_number = %d' %(section_number, last_section_number))
